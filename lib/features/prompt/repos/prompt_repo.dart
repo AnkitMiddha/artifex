@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class PromptRepo {
 
@@ -10,7 +11,7 @@ class PromptRepo {
     try{
         String url = "https://api.vyro.ai/v2/image/generations";
     Map<String,dynamic> headers = {
-     'Authorization': 'Bearer vk-0FHh2QXkGRpUDbyFMJ33tN8ABrv0opq2LBZslco22XDmUMD1o'
+     'Authorization': dotenv.env['API_KEY'],
     };
 
     Map<String,dynamic> payload = {
